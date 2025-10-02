@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube / Twitchの複窓 | by yuzuyu9499</title>
+    <meta name="description" content="YouTube、Twitchの複数動画を同時に再生できるWebアプリです。">
+
+    <meta property="og:title" content="YouTube / Twitchの複窓 | by yuzuyu9499">
+    <meta property="og:description" content="YouTube、Twitchの複数動画を同時に再生できるWebアプリです。">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/common.css">
+    <script src="/common.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
+
+    <!-- 個別 -->
+    <script src="/etc/js/tools/multi-view.js" defer></script>
+    <link rel="stylesheet" href="/tools/multi-viewer.css">
+    <!-- /個別 -->
+
+    <title>YouTube / Twitch 複窓</title>
+  </head>
+  <body>
+    <div class="main_body">
+      <div class="content">
+        <div class="functions">
+          <div class="r1">
+            <button id="fullscreen-toggle">
+              <i class="fa-solid fa-expand"></i>
+              <span>フルスクリーン</span>
+            </button>
+            <select id="grid-size">
+              <option value="1">1x1</option>
+              <option value="2">2x2</option>
+              <option value="3">3x3</option>
+              <option value="4">4x4</option>
+              <option value="5">5x5</option>
+            </select>
+          </div>
+          <div class="r2">
+            <input
+              class="fb"
+              type="url"
+              id="youtube-url"
+              placeholder="https://www.youtube.com/watch?v=..."
+            />
+            <button id="add-video">
+              <i class="fa-solid fa-plus"></i>
+              <span>動画を追加</span>
+            </button>
+            <button id="reload-btn">
+              <i class="fa-solid fa-rotate"></i>
+              <span>全動画を更新</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="video-wrapper">
+        <div class="video-list" id="grid"></div>
+      </div>
+    </div>
+  </body>
+</html>
