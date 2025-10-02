@@ -7,6 +7,17 @@ const fullscreenBtn = document.getElementById("fullscreen-toggle");
 const reloadBtn = document.getElementById("reload-btn");
 let players = [];
 
+const toggleButton = document.querySelectorAll(".theme-toggle");
+toggleButton.forEach(button => {
+  button.addEventListener("click", () => {
+    if (htmlEl.getAttribute("data-theme") === "dark") {
+      htmlEl.setAttribute("data-theme", "light");
+    } else {
+      htmlEl.setAttribute("data-theme", "dark");
+    }
+  });
+});
+
 
 function updateGridSize() {
   const n = parseInt(gridSizeSelect.value, 10);
